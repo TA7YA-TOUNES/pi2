@@ -28,13 +28,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $level = mysqli_real_escape_string($connexion, $_POST['level']);
     $duration = (int)$_POST['duration'];
     
-    $insert_query = "INSERT INTO courses (title, description, instructor_id, category, level, duration) 
-                    VALUES ('$title', '$description', $user_id, '$category', '$level', $duration)";
+    // Handle file upload
+    $course_image = '';
+    if (isset($_FILES['course_image']) && $_FILES['course_image']['error'] === UPLOAD_ERR_OK) {
+        $upload_dir = 'uploads/courses/';
+        
+        // Create directory if it doesn't exist
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+        
+        // Generate unique filename
+        $file_extension = strtolower(pathinfo($_FILES['course_image']['name'], PATHINFO_EXTENSION));
+        $new_filename = uniqid() . '.' . $file_extension;
+        $upload_path = $upload_dir . $new_filename;
+        
+        // Check if file is an image
+        $allowed_types = ['jpg', 'jpeg', 'png', 'gif'];
+        if (in_array($file_extension, $allowed_types)) {
+            if (move_uploaded_file($_FILES['course_image']['tmp_name'], $upload_path)) {
+                $course_image = $upload_path;
+            } else {
+                $error_message = "Error uploading image. Please try again.";
+            }
+        } else {
+            $error_message = "Invalid file type. Please upload a JPG, JPEG, PNG, or GIF image.";
+        }
+    }
     
-    if (mysqli_query($connexion, $insert_query)) {
-        $success_message = "Course added successfully!";
-    } else {
-        $error_message = "Error adding course. Please try again.";
+    if (!isset($error_message)) {
+        $insert_query = "INSERT INTO courses (title, description, instructor_id, category, level, duration, course_image) 
+                        VALUES ('$title', '$description', $user_id, '$category', '$level', $duration, '$course_image')";
+        
+        if (mysqli_query($connexion, $insert_query)) {
+            $success_message = "Course added successfully!";
+        } else {
+            $error_message = "Error adding course. Please try again.";
+        }
     }
 }
 ?>

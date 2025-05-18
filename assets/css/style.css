@@ -3,6 +3,7 @@
   justify-content: space-between;
   height: 100vh;
 }
+
 .sidebar {
   background-color: #eff4ff;
   width: 20%;
@@ -301,6 +302,7 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .right-header-user p {

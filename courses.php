@@ -108,7 +108,7 @@ $enrolled_result = mysqli_query($connexion, $enrolled_query);
         <?php while($course = mysqli_fetch_assoc($courses_result)): ?>
           <div class="course-card">
             <div class="course-image">
-              <img src="assets/images/course1.png" alt="<?php echo htmlspecialchars($course['title']); ?>" />
+              <img src="<?php echo !empty($course['course_image']) ? htmlspecialchars($course['course_image']) : 'assets/images/course1.png'; ?>" alt="<?php echo htmlspecialchars($course['title']); ?>" />
               <span class="course-level"><?php echo ucfirst($course['level']); ?></span>
             </div>
             <div class="course-content">
@@ -145,14 +145,15 @@ $enrolled_result = mysqli_query($connexion, $enrolled_query);
           <?php while($course = mysqli_fetch_assoc($enrolled_result)): ?>
             <div class="enrolled-course-card">
               <div class="course-image">
-                <img src="assets/images/course1.png" alt="<?php echo htmlspecialchars($course['title']); ?>" />
+                <img src="<?php echo !empty($course['course_image']) ? htmlspecialchars($course['course_image']) : 'assets/images/course1.png'; ?>" alt="<?php echo htmlspecialchars($course['title']); ?>" />
                 <div class="progress-bar">
                   <div class="progress" style="width: <?php echo $course['progress']; ?>%"></div>
                 </div>
               </div>
               <div class="course-content">
-                <h3><?php echo htmlspecialchars($course['title']); ?></h3>
-                <p>Instructor: <?php echo htmlspecialchars($course['instructor_name']); ?></p>
+                <div class="course-category"><?php echo htmlspecialchars($course['category']); ?></div>
+                <h3 class="course-title"><?php echo htmlspecialchars($course['title']); ?></h3>
+                <p class="instructor-name">By <?php echo htmlspecialchars($course['instructor_name']); ?></p>
                 <div class="course-progress">
                   <span class="progress-text"><?php echo $course['progress']; ?>% Complete</span>
                   <a href="course-content.php?id=<?php echo $course['course_id']; ?>" class="continue-btn">Continue</a>

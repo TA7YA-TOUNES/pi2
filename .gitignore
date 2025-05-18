@@ -1,3 +1,7 @@
 # Ignore profile images
 uploads/profile_images/*
 !uploads/profile_images/.gitkeep
+
+# Ignore courses images
+uploads/courses/*
+!uploads/courses/.gitkeep

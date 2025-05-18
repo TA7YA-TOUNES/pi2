@@ -23,6 +23,7 @@ CREATE TABLE courses (
     category VARCHAR(100),
     level ENUM('beginner', 'intermediate', 'advanced') DEFAULT 'beginner',
     duration INT, -- in hours
+    course_image VARCHAR(255) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (instructor_id) REFERENCES users(user_id)
 );
