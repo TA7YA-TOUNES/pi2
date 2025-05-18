@@ -51,39 +51,6 @@ if (isset($_SESSION['error'])) {
     <title>Settings - TuniLearn</title>
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/settings.css" />
-    <style>
-      .skills-container {
-        margin-top: 10px;
-      }
-      .skill-tag {
-        display: inline-block;
-        background: #e2e8f0;
-        padding: 5px 10px;
-        border-radius: 15px;
-        margin: 5px;
-        font-size: 14px;
-      }
-      .skill-tag .remove-skill {
-        margin-left: 5px;
-        cursor: pointer;
-        color: #666;
-      }
-      .skill-tag .remove-skill:hover {
-        color: #ff0000;
-      }
-      #skills-input {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-      .skills-help {
-        font-size: 12px;
-        color: #666;
-        margin-top: 5px;
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -151,7 +118,13 @@ if (isset($_SESSION['error'])) {
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" />
+                  <div class="email-input-container">
+                    <svg class="lock-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <input type="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" disabled />
+                  </div>
                 </div>
               </div>
 

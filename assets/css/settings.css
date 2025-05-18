@@ -227,3 +227,51 @@
   border-color: #2563eb;
   color: #2563eb;
 }
+
+.skills-container {
+  margin-top: 10px;
+}
+.skill-tag {
+  display: inline-block;
+  background: #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin: 5px;
+  font-size: 14px;
+}
+.skill-tag .remove-skill {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #666;
+}
+.skill-tag .remove-skill:hover {
+  color: #ff0000;
+}
+#skills-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.skills-help {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+.email-input-container {
+  position: relative;
+}
+.email-input-container input[type="email"] {
+  padding-left: 35px;
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+.email-input-container .lock-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}
