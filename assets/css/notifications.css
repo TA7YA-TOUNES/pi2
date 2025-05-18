@@ -1,0 +1,136 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eff4ff;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #374151;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #374151;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.notifications-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.notifications-header h1 {
+  color: #2563eb;
+  font-size: 24px;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.notification-actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notification-actions button:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #eff4ff;
+}
+
+.notification-item.unread {
+  background-color: #eff4ff;
+}
+
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: #dbe6fe;
+  border-radius: 50%;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-text {
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.notification-time {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.notification-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2563eb;
+  border-radius: 50%;
+}

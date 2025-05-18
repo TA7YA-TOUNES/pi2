@@ -1,0 +1,408 @@
+.dashboardContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+.sidebar {
+  background-color: #eff4ff;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  overflow-y: auto;
+  border-left: 2px solid #eff4ff;
+}
+
+.right::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  background-color: white;
+  width: 70%;
+  margin: 20px 22% 40px 22%;
+}
+
+.logo {
+  color: #2563eb;
+  margin: 20px 40px;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0px 40px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.premium {
+  padding: 20px;
+  background-color: #dbe6fe;
+  margin: 25px;
+  border-radius: 15px;
+  margin-top: auto;
+}
+
+.premium h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.premium p {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.main-content-premium button,
+.premium button {
+  background-color: white;
+  border: 2px solid #2563eb;
+  color: black;
+  border-radius: 999px;
+  margin-top: 30px;
+  font-weight: 600;
+  padding: 15px 20px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.main-content-premium button {
+  width: 50%;
+}
+
+.main-content-premium button:hover,
+.premium button:hover {
+  background-color: #2563eb;
+  border: 2px solid #2563eb;
+  color: white;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar {
+  position: relative;
+  gap: 5px;
+  background-color: #efefef;
+  padding: 10px 20px;
+  border-radius: 999px;
+}
+
+.search-input {
+  padding-left: 30px;
+  border: none;
+  background-color: #efefef;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-header-left h2 {
+  color: #2563eb;
+}
+
+.main-content {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-content-premium {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #dbe6fe;
+  border-radius: 15px;
+  margin-top: auto;
+}
+
+.main-content-overview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-content-overview p {
+  color: rgb(79, 79, 79);
+  font-size: 14px;
+}
+.main-content-overview h2 {
+  color: #2563eb;
+}
+
+.main-content-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.main-content-overview div {
+  padding: 20px;
+  background-color: #dbe6fe;
+  border-radius: 15px;
+}
+
+.main-content-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0px;
+}
+
+.main-content-title-container a {
+  text-decoration: underline;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.goPremium-title {
+  color: #2563eb;
+  font-size: 24px;
+}
+
+.main-content-courses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+.main-content-courses-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dbe6fe;
+  padding: 20px;
+  border-radius: 15px;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.main-content-courses-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.course-category {
+  background-color: #2563eb;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.course-title {
+  font-weight: 600;
+}
+
+.course-author {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #2563eb;
+}
+
+.right-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-bottom: 2px solid #eff4ff;
+}
+
+.right-header-notification {
+  background-color: #dbe6fe;
+  padding: 10px;
+  border-radius: 999px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-header-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.right-header-user a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.right-header-user a:hover {
+  color: #2563eb;
+}
+
+.right-header-user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.right-header-user p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.right-reminders {
+  margin: 20px;
+}
+
+.right-reminders-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dbe6fe;
+  padding: 10px 14px;
+  border-radius: 15px;
+}
+
+.right-reminders-card h3 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.right-reminders-card p {
+  font-size: 12px;
+  color: rgb(128, 128, 128);
+}
+
+.right-reminders-card-time {
+  background-color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-reminders-card h4 {
+  font-size: 12px;
+  font-weight: normal;
+  color: white;
+}
+
+.right-reminders-card {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.right-events-card {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.right-events-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dbe6fe;
+  padding: 10px 14px;
+  border-radius: 15px;
+}
+
+.right-events-card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.right-events-card h2 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.right-events-card p {
+  font-size: 11px;
+  color: rgb(128, 128, 128);
+}
+
+.t2,
+.t3,
+.t4,
+.t5,
+.t6 {
+  margin-left: -10px;
+}
+
+.right-events-card-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.right-events-card-time-line {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background-color: #2563eb;
+}

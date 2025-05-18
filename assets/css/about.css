@@ -1,0 +1,163 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eff4ff;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #374151;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #374151;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-header h1 {
+  color: #2563eb;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.about-header p {
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.mission-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.mission-section h2 {
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.mission-section p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.stat-card {
+  background-color: #eff4ff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  color: #2563eb;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: #6b7280;
+}
+
+.team-section {
+  text-align: center;
+}
+
+.team-section h2 {
+  color: #374151;
+  margin-bottom: 40px;
+}
+.team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.team-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.team-row:first-child {
+  justify-content: space-between;
+}
+
+.team-row:last-child {
+  justify-content: center;
+  gap: 80px;
+}
+
+.team-member {
+  background-color: #eff4ff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex: 1;
+  max-width: 350px;
+}
+
+.team-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.05);
+}
