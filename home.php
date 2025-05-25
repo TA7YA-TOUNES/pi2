@@ -137,34 +137,15 @@ $recent_courses_result = mysqli_query($connexion, $recent_courses_query);
                 <h2>09</h2>
               </div>
             </div>
-          </div>
-
-          <div>
-            <div class="main-content-title-container">
-              <h3 class="main-content-title">Conitnue Reading</h3>
-              <a href="#">View All</a>
-            </div>
-            <div class="main-content-courses">
-              <?php while($course = mysqli_fetch_assoc($recent_courses_result)): ?>
-              <div class="main-content-courses-card">
-                <div>
-                  <img src="assets/images/course1.png" alt="<?php echo htmlspecialchars($course['title']); ?>" />
-                </div>
-                <div class="main-content-courses-card-info">
-                  <div class="course-category">
-                    <p>Web Development</p>
-                  </div>
-                  <div class="course-title">
-                    <p><?php echo htmlspecialchars($course['title']); ?></p>
-                  </div>
-                  <div class="course-author">
-                    <p><?php echo htmlspecialchars($course['instructor_name']); ?></p>
-                    <div class="circle"></div>
-                    <p>5hrs</p>
-                  </div>
-                </div>
+            <div class="quotes-section">
+              <div class="quote-card">
+                <p class="quote-text" id="quote1-text"></p>
+                <p class="quote-author" id="quote1-author"></p>
               </div>
-              <?php endwhile; ?>
+              <div class="quote-card">
+                <p class="quote-text" id="quote2-text"></p>
+                <p class="quote-author" id="quote2-author"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -189,143 +170,47 @@ $recent_courses_result = mysqli_query($connexion, $recent_courses_query);
         </div>
 
         <div class="right-reminders">
-          <h3 class="main-content-title">Reminders</h3>
+          <h3 class="main-content-title">Started Courses</h3>
           <div class="right-reminders-container">
-            <div class="right-reminders-card">
-              <div>
-                <h3>Week 01 Assignment</h3>
-                <p>Js Assignment</p>
-              </div>
-              <div class="right-reminders-card-time">
-                <h4>7:00 PM</h4>
-              </div>
-            </div>
-
-            <div class="right-reminders-card">
-              <div>
-                <h3>Week 01 Assignment</h3>
-                <p>Js Assignment</p>
-              </div>
-              <div class="right-reminders-card-time">
-                <h4>7:00 PM</h4>
-              </div>
-            </div>
-
-            <div class="right-reminders-card">
-              <div>
-                <h3>Week 01 Assignment</h3>
-                <p>Js Assignment</p>
-              </div>
-              <div class="right-reminders-card-time">
-                <h4>7:00 PM</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="right-reminders">
-          <h3 class="main-content-title">Events</h3>
-          <div class="right-events-container">
-            <div class="right-events-card">
-              <div>
-                <div>
-                  <h3>
-                    Online TuniLearn Hackathon: Health Platform Development
-                  </h3>
-                  <p>Hosted by TuniLearn & ESB</p>
-                </div>
-                <div>
-                  <h2>Meeting Attending</h2>
-                  <div class="right-events-team">
-                    <img
-                      src="assets/images/team/t1.png"
-                      alt="Meeting"
-                      class="t1"
-                    />
-                    <img
-                      src="assets/images/team/t2.png"
-                      alt="Meeting"
-                      class="t2"
-                    />
-                    <img
-                      src="assets/images/team/t3.png"
-                      alt="Meeting"
-                      class="t3"
-                    />
-                    <img
-                      src="assets/images/team/t1.png"
-                      alt="Meeting"
-                      class="t4"
-                    />
-                    <img
-                      src="assets/images/team/t2.png"
-                      alt="Meeting"
-                      class="t5"
-                    />
-                    <img
-                      src="assets/images/team/t3.png"
-                      alt="Meeting"
-                      class="t6"
-                    />
-                  </div>
-                </div>
-                <div class="right-events-card-time">
-                  <p>Dec 12th, 2024 - Dec 13th, 2024</p>
-                  <div class="right-events-card-time-line"></div>
-                  <p>13h - 13h</p>
-                </div>
-              </div>
-            </div>
-            <div class="right-events-card">
-              <div>
-                <div>
-                  <h3>
-                    Online TuniLearn Hackathon: Health Platform Development
-                  </h3>
-                  <p>Hosted by TuniLearn & ESB</p>
-                </div>
-                <div>
-                  <h2>Meeting Attending</h2>
-                  <div class="right-events-team">
-                    <img
-                      src="assets/images/team/t1.png"
-                      alt="Meeting"
-                      class="t1"
-                    />
-                    <img
-                      src="assets/images/team/t2.png"
-                      alt="Meeting"
-                      class="t2"
-                    />
-                    <img
-                      src="assets/images/team/t3.png"
-                      alt="Meeting"
-                      class="t3"
-                    />
-                    <img
-                      src="assets/images/team/t1.png"
-                      alt="Meeting"
-                      class="t4"
-                    />
-                    <img
-                      src="assets/images/team/t2.png"
-                      alt="Meeting"
-                      class="t5"
-                    />
-                    <img
-                      src="assets/images/team/t3.png"
-                      alt="Meeting"
-                      class="t6"
-                    />
-                  </div>
-                </div>
-                <div class="right-events-card-time">
-                  <p>Dec 12th, 2024 - Dec 13th, 2024</p>
-                  <div class="right-events-card-time-line"></div>
-                  <p>13h - 13h</p>
-                </div>
-              </div>
-            </div>
+            <?php
+            // Get started courses
+            $started_courses_query = "SELECT c.*, u.name as instructor_name 
+                                    FROM courses c 
+                                    JOIN users u ON c.instructor_id = u.user_id 
+                                    JOIN course_enrollments ce ON c.course_id = ce.course_id 
+                                    WHERE ce.student_id = ? 
+                                    ORDER BY ce.enrolled_at DESC LIMIT 3";
+            
+            // Prepare and execute the query with proper error handling
+            $stmt = mysqli_prepare($connexion, $started_courses_query);
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "i", $user_id);
+                if (mysqli_stmt_execute($stmt)) {
+                    $started_courses_result = mysqli_stmt_get_result($stmt);
+                    
+                    if ($started_courses_result && mysqli_num_rows($started_courses_result) > 0) {
+                        while($course = mysqli_fetch_assoc($started_courses_result)): ?>
+                        <div class="right-reminders-card">
+                            <div>
+                                <h3><?php echo htmlspecialchars($course['title']); ?></h3>
+                                <p><?php echo htmlspecialchars($course['instructor_name']); ?></p>
+                            </div>
+                            <div class="right-reminders-card-time">
+                                <a href="course.php?id=<?php echo $course['course_id']; ?>" class="continue-btn">Continue</a>
+                            </div>
+                        </div>
+                        <?php endwhile;
+                    } else {
+                        echo '<div class="right-reminders-card"><div><p>No courses started yet</p></div></div>';
+                    }
+                } else {
+                    echo '<div class="right-reminders-card"><div><p>Error executing query: ' . mysqli_stmt_error($stmt) . '</p></div></div>';
+                }
+                mysqli_stmt_close($stmt);
+            } else {
+                echo '<div class="right-reminders-card"><div><p>Error preparing statement: ' . mysqli_error($connexion) . '</p></div></div>';
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -358,5 +243,6 @@ $recent_courses_result = mysqli_query($connexion, $recent_courses_query);
         });
       });
     </script>
+    <script src="./assets/js/quotes.js"></script>
   </body>
 </html>

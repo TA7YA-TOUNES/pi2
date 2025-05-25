@@ -8,6 +8,12 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+// Get user data
+$user_id = $_SESSION['user_id'];
+$user_query = "SELECT * FROM users WHERE user_id = $user_id";
+$user_result = mysqli_query($connexion, $user_query);
+$user = mysqli_fetch_assoc($user_result);
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +48,7 @@ if (!isset($_SESSION['user_id'])) {
           />
         </a>
         <a href="./profile.php">
-          <img src="<?php echo htmlspecialchars($user['profile_image']); ?>" alt="Profile" class="profile-pic" />
+          <img src="<?php echo !empty($user['profile_image']) ? htmlspecialchars($user['profile_image']) : 'assets/images/user.png'; ?>" alt="Profile" class="profile-pic" />
         </a>
       </div>
     </nav>

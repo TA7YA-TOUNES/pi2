@@ -408,3 +408,56 @@
   border-radius: 999px;
   background-color: #2563eb;
 }
+
+.quotes-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.quote-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-2px);
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  color: #1f2937;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.quote-author {
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.continue-btn {
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.continue-btn:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .quotes-section {
+    grid-template-columns: 1fr;
+  }
+}
