@@ -92,4 +92,37 @@ CREATE TABLE course_enrollments (
     progress INT DEFAULT 0, -- percentage of completion
     FOREIGN KEY (student_id) REFERENCES users(user_id),
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
+-- Course Sections Table
+CREATE TABLE IF NOT EXISTS course_sections (
+    section_id INT PRIMARY KEY AUTO_INCREMENT,
+    course_id INT,
+    title VARCHAR(255) NOT NULL,
+    order_index INT NOT NULL,
+    FOREIGN KEY (course_id) REFERENCES courses(course_id) ON DELETE CASCADE
+);
+
+-- Course Lessons Table
+CREATE TABLE IF NOT EXISTS course_lessons (
+    lesson_id INT PRIMARY KEY AUTO_INCREMENT,
+    section_id INT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    video_url VARCHAR(255),
+    order_index INT NOT NULL,
+    duration INT, -- in minutes
+    is_completed BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (section_id) REFERENCES course_sections(section_id) ON DELETE CASCADE
+);
+
+-- Student Lesson Progress Table
+CREATE TABLE IF NOT EXISTS student_lesson_progress (
+    student_id INT,
+    lesson_id INT,
+    is_completed BOOLEAN DEFAULT FALSE,
+    completed_at TIMESTAMP NULL,
+    PRIMARY KEY (student_id, lesson_id),
+    FOREIGN KEY (student_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (lesson_id) REFERENCES course_lessons(lesson_id) ON DELETE CASCADE
 ); 

@@ -50,6 +50,9 @@ $user = mysqli_fetch_assoc($user_result);
         <a href="./profile.php">
           <img src="<?php echo !empty($user['profile_image']) ? htmlspecialchars($user['profile_image']) : 'assets/images/user.png'; ?>" alt="Profile" class="profile-pic" />
         </a>
+        <a href="./logout.php" class="logout-btn">
+          <img src="assets/images/icons/logout.svg" alt="Logout" class="nav-icon" />
+        </a>
       </div>
     </nav>
 

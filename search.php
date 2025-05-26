@@ -75,6 +75,9 @@ if (!empty($search_query)) {
         <a href="./profile.php">
           <img src="<?php echo htmlspecialchars($user['profile_image']); ?>" alt="Profile" class="profile-pic" />
         </a>
+        <a href="./logout.php" class="logout-btn">
+          <img src="assets/images/icons/logout.svg" alt="Logout" class="nav-icon" />
+        </a>
       </div>
     </nav>
 
@@ -123,7 +126,7 @@ if (!empty($search_query)) {
                       <?php echo htmlspecialchars($course['duration'] ?? 'N/A'); ?>
                     </p>
                   </div>
-                  <a href="course.php?id=<?php echo $course['course_id']; ?>" class="start-btn">Start Learning</a>
+                  <a href="courses.php?id=<?php echo $course['course_id']; ?>" class="start-btn">Start Learning</a>
                 </div>
               <?php endforeach; ?>
             <?php endif; ?>

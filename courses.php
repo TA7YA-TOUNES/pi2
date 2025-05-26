@@ -81,6 +81,9 @@ $enrolled_result = mysqli_query($connexion, $enrolled_query);
         <a href="./profile.php">
           <img src="<?php echo htmlspecialchars($user['profile_image']); ?>" alt="Profile" class="profile-pic" />
         </a>
+        <a href="./logout.php" class="logout-btn">
+          <img src="assets/images/icons/logout.svg" alt="Logout" class="nav-icon" />
+        </a>
       </div>
     </nav>
 
@@ -120,6 +123,7 @@ $enrolled_result = mysqli_query($connexion, $enrolled_query);
                 <span class="duration"><?php echo $course['duration']; ?> hours</span>
                 <span class="students"><?php echo $course['enrolled_students']; ?> students</span>
               </div>
+             
               <?php if ($course['enrollment_status']): ?>
                 <div class="enrollment-status">
                   <?php if ($course['enrollment_status'] === 'in_progress'): ?>
@@ -133,6 +137,19 @@ $enrolled_result = mysqli_query($connexion, $enrolled_query);
                   <input type="hidden" name="course_id" value="<?php echo $course['course_id']; ?>">
                   <button type="submit" name="enroll_course" class="enroll-btn">Enroll Now</button>
                 </form>
+              <?php endif; ?>
+
+              <?php if ($user['role'] === 'instructor' || $user['role'] === 'admin'): ?>
+                <?php if ($course['instructor_id'] == $user_id): ?>
+                  <div class="instructor-actions">
+                    <a href="add_course_content.php?id=<?php echo $course['course_id']; ?>" class="manage-content-btn" title="Manage Content">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                <?php endif; ?>
               <?php endif; ?>
             </div>
           </div>

@@ -759,3 +759,42 @@
 .enrolled-course-card {
   animation: fadeIn 0.5s ease-out;
 }
+
+.instructor-actions {
+  margin-top: 1rem;
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+}
+
+.manage-content-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.manage-content-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.manage-content-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.manage-content-btn:active {
+  transform: translateY(0);
+}

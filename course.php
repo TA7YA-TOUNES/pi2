@@ -44,6 +44,9 @@ if (!isset($_SESSION['user_id'])) {
         <a href="./profile.php">
           <img src="<?php echo htmlspecialchars($user['profile_image']); ?>" alt="Profile" class="profile-pic" />
         </a>
+        <a href="./logout.php" class="logout-btn">
+          <img src="assets/images/icons/logout.svg" alt="Logout" class="nav-icon" />
+        </a>
       </div>
     </nav>
 

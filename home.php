@@ -196,7 +196,7 @@ $recent_courses_result = mysqli_query($connexion, $recent_courses_query);
                                 <p><?php echo htmlspecialchars($course['instructor_name']); ?></p>
                             </div>
                             <div class="right-reminders-card-time">
-                                <a href="course.php?id=<?php echo $course['course_id']; ?>" class="continue-btn">Continue</a>
+                                <a href="courses.php?id=<?php echo $course['course_id']; ?>" class="continue-btn">Continue</a>
                             </div>
                         </div>
                         <?php endwhile;

@@ -250,3 +250,53 @@
   line-height: 1.6;
   font-size: 14px;
 }
+
+.lesson-meta {
+  display: flex;
+  gap: 20px;
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.lesson-text {
+  color: #374151;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.lesson-text p {
+  margin-bottom: 20px;
+}
+
+.no-content {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+}
+
+.no-content h1 {
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.no-content p {
+  color: #6b7280;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section li a {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.section li a:hover {
+  color: #2563eb;
+}
