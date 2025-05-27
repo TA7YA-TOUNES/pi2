@@ -2,6 +2,9 @@
 session_start();
 require_once '../config/connection.php';
 
+// Load configuration
+$config = require_once '../config.php';
+
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     http_response_code(401);
@@ -20,7 +23,7 @@ if (empty($message)) {
 }
 
 // OpenAI API configuration
-$api_key = ''; // Replace with your actual API key
+$api_key = $config['api_keys']['openai'];
 $api_url = 'https://api.openai.com/v1/chat/completions';
 
 // Prepare the system message to focus on educational content

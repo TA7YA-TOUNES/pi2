@@ -5,3 +5,6 @@ uploads/profile_images/*
 # Ignore courses images
 uploads/courses/*
 !uploads/courses/.gitkeep
+
+# Ignore configuration files with sensitive data
+config.php
