@@ -9,7 +9,7 @@ CREATE TABLE users (
     involvements VARCHAR(255) DEFAULT NULL,
     specialisation VARCHAR(255) DEFAULT NULL,
     skills VARCHAR(255) DEFAULT NULL,
-    profile_image VARCHAR(255) DEFAULT 'assets/images/user.png'
+    profile_image VARCHAR(255) DEFAULT 'assets/images/avatar.png'
 );
 
 

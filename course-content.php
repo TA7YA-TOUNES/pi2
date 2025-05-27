@@ -267,7 +267,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mark_complete'])) {
           />
         </a>
         <a href="./profile.php">
-          <img src="<?php echo !empty($user['profile_image']) ? htmlspecialchars($user['profile_image']) : 'assets/images/user.png'; ?>" alt="Profile" class="profile-pic" />
+          <img src="<?php echo !empty($user['profile_image']) ? htmlspecialchars($user['profile_image']) : 'assets/images/avatar.png'; ?>" alt="Profile" class="profile-pic" />
         </a>
         <a href="./logout.php" class="logout-btn">
           <img src="assets/images/icons/logout.svg" alt="Logout" class="nav-icon" />
@@ -363,7 +363,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mark_complete'])) {
             </div>
           </div>
           <div class="user-profile">
-            <img src="<?php echo !empty($user['profile_image']) ? htmlspecialchars($user['profile_image']) : 'assets/images/user.png'; ?>" alt="Profile" class="profile-pic" />
+            <img src="<?php echo !empty($user['profile_image']) ? htmlspecialchars($user['profile_image']) : 'assets/images/avatar.png'; ?>" alt="Profile" class="profile-pic" />
             <span><?php echo htmlspecialchars($user['name']); ?></span>
           </div>
         </div>
