@@ -65,6 +65,14 @@ if (!empty($search_query)) {
           <a href="./courses.php" class="nav-link">
             <img src="assets/images/icons/Course.svg" alt="Courses" /> Courses
           </a>
+          <a href="./chat.php" class="nav-link">
+            <img src="assets/images/icons/mind.svg" alt="AI Chat" /> AI Assistant
+          </a>
+          <?php if ($user['role'] === 'instructor' || $user['role'] === 'admin'): ?>
+          <a href="./add_course.php" class="nav-link active">
+            <img src="assets/images/icons/add.svg" alt="Add Course" /> Add Course
+          </a>
+          <?php endif; ?>
         </div>
       </div>
       <div class="nav-right">

@@ -125,4 +125,14 @@ CREATE TABLE IF NOT EXISTS student_lesson_progress (
     PRIMARY KEY (student_id, lesson_id),
     FOREIGN KEY (student_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (lesson_id) REFERENCES course_lessons(lesson_id) ON DELETE CASCADE
+);
+
+-- AI Chat Logs Table
+CREATE TABLE IF NOT EXISTS ai_chat_logs (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    user_message TEXT NOT NULL,
+    ai_response TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 ); 

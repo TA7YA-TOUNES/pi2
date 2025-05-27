@@ -64,6 +64,10 @@ $recent_courses_result = mysqli_query($connexion, $recent_courses_query);
             <img src="assets/images/icons/Course.svg" alt="Dashboard" />
             <p>Courses</p>
           </a>
+          <a href="./chat.php" class="sidebar-link">
+            <img src="assets/images/icons/mind.svg" alt="AI Chat" />
+            <p>AI Assistant</p>
+          </a>
           <?php if ($user['role'] === 'instructor' || $user['role'] === 'admin'): ?>
           <a href="./add_course.php" class="sidebar-link">
             <img src="assets/images/icons/add.svg" alt="Add Course" />
