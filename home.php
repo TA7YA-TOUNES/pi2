@@ -50,7 +50,9 @@ $recent_courses_result = mysqli_query($connexion, $recent_courses_query);
   <body>
     <div class="dashboardContainer">
       <div class="sidebar">
-        <h1 class="logo">TuniLearn.</h1>
+      <h1 class="logo">
+          <a href="./home.php" style="text-decoration: none; color: inherit;">TuniLearn.</a>
+        </h1>
         <div class="sidebar-links">
           <a href="./home.php" class="sidebar-link">
             <img

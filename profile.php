@@ -27,7 +27,9 @@ $user = mysqli_fetch_assoc($user_result);
   <body>
     <nav class="navbar">
       <div class="nav-left">
-        <h1 class="logo">TuniLearn.</h1>
+        <h1 class="logo">
+          <a href="./home.php" style="text-decoration: none; color: inherit;">TuniLearn.</a>
+        </h1>
         <div class="nav-links">
           <a href="./home.php" class="nav-link">
             <img src="assets/images/icons/home.svg" alt="Home" /> Home
